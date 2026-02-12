@@ -18,10 +18,16 @@ class TraceFile:
 	def write(self, msg):
 		dbg.Trace(msg)
 
+	def flush(self):
+		pass
+
 class TraceErrorFile:
 	def write(self, msg):
 		dbg.TraceError(msg)
 		dbg.RegisterExceptionString(msg)
+
+	def flush(self):
+		pass
 
 class LogBoxFile:
 	def __init__(self):
