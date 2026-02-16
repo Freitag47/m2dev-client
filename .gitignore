@@ -1,11 +1,17 @@
 ﻿syserr.txt
 log.txt
+packetdump.txt
+pdlog.txt
 ErrorLog.txt
+
 *.eix
 *.epk
 *.pck
+
+/*.inf
 /*.cfg
 /*.exe
+
 !/config.exe
 !/Metin2.exe
 
