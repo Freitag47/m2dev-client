@@ -111,7 +111,9 @@ class OptionDialog(ui.ScriptWindow):
 
 		self.__SetCurTilingMode()
 
-		self.__ClickRadioButton(self.fogModeButtonList, constInfo.GET_FOG_LEVEL_INDEX())
+		# MR-14: Fog update by Alaric
+		self.__ClickRadioButton(self.fogModeButtonList, systemSetting.GetFogLevel())
+		# MR-14: -- END OF -- Fog update by Alaric
 		self.__ClickRadioButton(self.cameraModeButtonList, constInfo.GET_CAMERA_MAX_DISTANCE_INDEX())
 
 		if musicInfo.fieldMusic==musicInfo.METIN2THEMA:
@@ -170,7 +172,11 @@ class OptionDialog(ui.ScriptWindow):
 		self.__ClickRadioButton(self.cameraModeButtonList, index)
 
 	def __SetFogLevel(self, index):
-		constInfo.SET_FOG_LEVEL_INDEX(index)
+		# MR-14: Fog update by Alaric
+		# constInfo.SET_FOG_LEVEL_INDEX(index)
+		systemSetting.SetFogLevel(index)
+		# MR-14: -- END OF -- Fog update by Alaric
+
 		self.__ClickRadioButton(self.fogModeButtonList, index)
 
 	def __OnClickCameraModeShortButton(self):

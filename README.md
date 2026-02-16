@@ -7,7 +7,9 @@ This repository contains all client-side data, including locale files, configura
 ## 📋 Changelog
 
 ### 🐛 Bug Fixes
- - **Guild window**: Removed the clickable area for the `BASE` tab and adjusted positions and widths for all other Guild window tabs.
+ - **Fog update**: Adjusted fog settings to work with the updated official version using the 3 classic options.
+ - **Fog levels**: Adjusted fog level settings for some maps.
+ **Fix by Alaric 🙏**
 
 <br>
 <br>
