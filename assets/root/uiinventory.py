@@ -416,6 +416,7 @@ class InventoryWindow(ui.ScriptWindow):
 		self.questionDialog = None
 		self.mallButton = None
 		self.DSSButton = None
+		self.DSSButtonEffect = None
 		self.interface = None
 
 		if self.wndCostume:
@@ -472,6 +473,25 @@ class InventoryWindow(ui.ScriptWindow):
 	def ClickDSSButton(self):
 		print("click_dss_button")
 		self.interface.ToggleDragonSoulWindow()
+
+	def UseDSSButtonEffect(self, enable):
+		if self.DSSButton:
+			DSSButtonEffect = ui.SlotWindow()
+			DSSButtonEffect.AddFlag("attach")
+			DSSButtonEffect.SetParent(self.DSSButton)
+			DSSButtonEffect.SetPosition(3.2, 0)
+
+			DSSButtonEffect.AppendSlot(0, 0, 0, 32, 32)
+			DSSButtonEffect.SetRenderSlot(0)
+			DSSButtonEffect.RefreshSlot()
+
+			if enable == True:
+				DSSButtonEffect.ActivateSlot(0)
+				DSSButtonEffect.Show()
+			else:
+				DSSButtonEffect.DeactivateSlot(0)
+				DSSButtonEffect.Hide()
+			self.DSSButtonEffect = DSSButtonEffect
 
 	def ClickCostumeButton(self):
 		print("Click Costume Button")

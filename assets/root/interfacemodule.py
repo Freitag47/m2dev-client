@@ -173,6 +173,7 @@ class Interface(object):
 		wndInventory.BindInterfaceClass(self)
 		if app.ENABLE_DRAGON_SOUL_SYSTEM:
 			wndDragonSoul = uiDragonSoul.DragonSoulWindow()	
+			wndDragonSoul.BindInterfaceClass(self)
 			wndDragonSoulRefine = uiDragonSoul.DragonSoulRefineWindow()
 		else:
 			wndDragonSoul = None
@@ -1696,6 +1697,10 @@ class Interface(object):
 
 	def EmptyFunction(self):
 		pass
+
+	def UseDSSButtonEffect(self, enable):
+		if self.wndInventory:
+			self.wndInventory.UseDSSButtonEffect(enable)
 
 if __name__ == "__main__":
 
