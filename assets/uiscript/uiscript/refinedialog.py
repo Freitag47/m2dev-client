@@ -57,7 +57,9 @@ window = {
 					"vertical_align" : "bottom",
 					"text_horizontal_align" : "center",
 					"x" : 0,
-					"y" : 70,
+                    # MR-15: Adjust button padding for refine window
+					"y" : 80,
+                    # MR-15: -- END OF -- Adjust button padding for refine window
 				},
 				{
 					"name" : "Cost",
@@ -67,7 +69,9 @@ window = {
 					"vertical_align" : "bottom",
 					"text_horizontal_align" : "center",
 					"x" : 0,
-					"y" : 54,
+                     # MR-15: Adjust button padding for refine window
+					"y" : 64,
+                     # MR-15: -- END OF -- Adjust button padding for refine window
 				},
 				{
 					"name" : "AcceptButton",

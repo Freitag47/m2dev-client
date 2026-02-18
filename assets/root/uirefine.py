@@ -149,10 +149,14 @@ class RefineDialog(ui.ScriptWindow):
 
 	def UpdateDialog(self):
 		newWidth = self.toolTip.GetWidth() + 30
-		newHeight = self.toolTip.GetHeight() + 98
+		# MR-15: Adjust button padding for refine window
+		newHeight = self.toolTip.GetHeight() + 108
+		# MR-15: -- END OF -- Adjust button padding for refine window
 
 		self.board.SetSize(newWidth, newHeight)
-		self.titleBar.SetWidth(newWidth-15)
+		# MR-15: Adjust button padding for refine window
+		self.titleBar.SetWidth(newWidth - 15)
+		# MR-15: -- END OF -- Adjust button padding for refine window
 		self.SetSize(newWidth, newHeight)
 
 		(x, y) = self.GetLocalPosition()
@@ -319,11 +323,12 @@ class RefineDialogNew(ui.ScriptWindow):
 		item.SelectItem(nextGradeItemVnum)
 		self.itemImage.LoadImage(item.GetIconImageFileName())
 		xSlotCount, ySlotCount = item.GetItemSize()
+
 		for slot in self.slotList:
 			slot.Hide()
 
 		for i in range(min(3, ySlotCount)):
-			self.slotList[i].SetPosition(-35, i*32 - (ySlotCount-1)*16)
+			self.slotList[i].SetPosition(-35, i * 32 - (ySlotCount - 1) * 16)
 			self.slotList[i].Show()
 
 		self.dialogHeight = self.toolTip.GetHeight() + 46
@@ -383,19 +388,21 @@ class RefineDialogNew(ui.ScriptWindow):
 
 	def UpdateDialog(self):
 		newWidth = self.toolTip.GetWidth() + 60
-		newHeight = self.dialogHeight + 69
+		# MR-15: Adjust button padding for refine window
+		newHeight = self.dialogHeight + 79
+		# MR-15: -- END OF -- Adjust button padding for refine window
 
 		newHeight -= 8
 
 		if app.IsRTL():
-			self.board.SetPosition( newWidth, 0 )
+			self.board.SetPosition(newWidth, 0)
 
 			(x, y) = self.titleBar.GetLocalPosition()
-			self.titleBar.SetPosition( newWidth - 15, y )
+			self.titleBar.SetPosition(newWidth - 15, y)
 
 		self.board.SetSize(newWidth, newHeight)
 		self.toolTip.SetPosition(15 + 35, 38)
-		self.titleBar.SetWidth(newWidth-15)
+		self.titleBar.SetWidth(newWidth - 15)
 		self.SetSize(newWidth, newHeight)
 
 		(x, y) = self.GetLocalPosition()
