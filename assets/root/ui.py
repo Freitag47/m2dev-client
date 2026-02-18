@@ -1470,6 +1470,10 @@ class SlotWindow(Window):
 
 		wndMgr.SetSlot(self.hWnd, renderingSlotNumber, emotionIndex, 1, 1, icon)
 
+	def SetRenderSlot(self, renderingSlotNumber, diffuseColor = (1.0, 1.0, 1.0, 1.0)):
+		wndMgr.SetSlot(self.hWnd, renderingSlotNumber, 1, 1, 1, 0, diffuseColor)
+		wndMgr.SetSlotCount(self.hWnd, renderingSlotNumber, 0)
+
 	## Event
 	def OnSelectEmptySlot(self, slotNumber):
 		if self.eventSelectEmptySlot:

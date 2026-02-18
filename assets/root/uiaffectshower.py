@@ -118,7 +118,7 @@ class HorseImage(ui.ExpandedImageBox):
 
 			try:
 				grade = self.__GetHorseGrade(level)
-				self.__AppendText(localeInfo.LEVEL_LIST[grade])
+				self.__AppendText(localeInfo.LEVEL_LIST[int(grade)])
 			except IndexError:
 				print(("HorseImage.SetState(level=%d, health=%d, battery=%d) - Unknown Index" % (level, health, battery)))
 				return

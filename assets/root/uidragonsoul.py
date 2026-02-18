@@ -253,6 +253,18 @@ class DragonSoulWindow(ui.ScriptWindow):
 						break
 					
 		self.wndEquip.RefreshSlot()
+
+	def ActivateEquipSlotWindow(self, deck):
+		for i in range(6):
+			if deck == 2:
+				 plusCount = 6
+			else:
+				plusCount = 0
+			self.wndEquip.ActivateSlot(player.DRAGON_SOUL_EQUIPMENT_SLOT_START + i + plusCount)
+   
+	def DeactivateEquipSlotWindow(self):
+		for i in range(12):
+			self.wndEquip.DeactivateSlot(player.DRAGON_SOUL_EQUIPMENT_SLOT_START + i)
 		
 	def RefreshStatus(self):
 		self.RefreshItemSlot()
@@ -686,11 +698,17 @@ class DragonSoulWindow(ui.ScriptWindow):
 		self.deckTab[(deck + 1) % 2].SetUp()
 
 		self.RefreshEquipSlotWindow()
+		self.ActivateEquipSlotWindow(deck)
+		if self.interface:
+			self.interface.UseDSSButtonEffect(self.isActivated)
 		self.__WarmDragonSoulTimeCache(deck)
 		
 	def DeactivateDragonSoul(self):
 		self.isActivated = False
 		self.activateButton.SetUp()
+		self.DeactivateEquipSlotWindow()
+		if self.interface:
+			self.interface.UseDSSButtonEffect(self.isActivated)
 
 		if self.tooltipItem:
 			self.tooltipItem.ClearDragonSoulTimeCache()
@@ -810,6 +828,10 @@ class DragonSoulWindow(ui.ScriptWindow):
 			self.listHighlightedSlot.append (slot)
 	# Slot highlight related end
 	
+	def BindInterfaceClass(self, interface):
+		from _weakref import proxy
+		self.interface = proxy(interface)
+
 	def SetDragonSoulRefineWindow(self, wndDragonSoulRefine):
 		if app.ENABLE_DRAGON_SOUL_SYSTEM:
 			from _weakref import proxy
