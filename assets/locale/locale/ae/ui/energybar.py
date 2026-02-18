@@ -14,7 +14,7 @@ window = {
 
 	"children" :
 	(
-		# ±â·?
+		# Stamina
 		{
 			"name" : "EnergyGauge_Board",
 			"type" : "image",

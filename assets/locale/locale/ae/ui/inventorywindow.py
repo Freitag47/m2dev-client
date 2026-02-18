@@ -6,7 +6,7 @@ EQUIPMENT_START_INDEX = 90
 window = {
 	"name" : "InventoryWindow",
 
-	## 600 - (width + 오른쪽으로 부터 띄우기 24 px)
+	## 600 - (width + right-side offset of 24 px)
 	"x" : SCREEN_WIDTH - 176,
 	"y" : SCREEN_HEIGHT - 37 - 565,
 
@@ -85,11 +85,11 @@ window = {
 										{"index":EQUIPMENT_START_INDEX+8, "x":75, "y":145, "width":32, "height":32},
 										{"index":EQUIPMENT_START_INDEX+9, "x":114, "y":2, "width":32, "height":32},
 										{"index":EQUIPMENT_START_INDEX+10, "x":75, "y":35, "width":32, "height":32},
-										## 새 반지1
+										## New Ring 1
 										# {"index":item.EQUIPMENT_RING1, "x":2, "y":106, "width":32, "height":32},
-										## 새 반지2
+										## New Ring 2
 										# {"index":item.EQUIPMENT_RING2, "x":75, "y":106, "width":32, "height":32},
-										## 새 벨트
+										## New Belt
 										{"index":item.EQUIPMENT_BELT, "x":39, "y":106, "width":32, "height":32},
 									),
 						},
